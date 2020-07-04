@@ -26,6 +26,21 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jdbc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 			<exclusions>
@@ -36,6 +51,27 @@
 			</exclusions>
 		</dependency>
 
+		<!--MyBatis依赖导入，1.目前只导入了这个，会报错，需要配置其他信息-->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>2.1.3</version>
+		</dependency>
+
+		<!--MysqlConnector导入，2.第二步导入这个，目前报错-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>1.1.14</version>
+		</dependency>
+
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -43,6 +79,19 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<!--添加mybatisGenrator 3.目前仍然报错，没有配置文件-->
+<!--			<plugin>-->
+<!--				<groupId>org.mybatis.generator</groupId>-->
+<!--				<artifactId>mybatis-generator-maven-plugin</artifactId>-->
+<!--				<version>1.3.2</version>-->
+<!--				<configuration>-->
+<!--					<configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>-->
+<!--					<overwrite>true</overwrite>-->
+<!--					<verbose>true</verbose>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
+
 		</plugins>
 	</build>
 
